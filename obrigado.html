@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you - Wilson Johne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner container">
+            <div class="brand">
+                <img src="Chaapeu.png" alt="logo" class="logo h-retro" style="object-fit:cover">
+                <div class="title">
+                    <div class="name">Wilson Johne</div>
+                    <div class="tag">Music & Production</div>
+                </div>
+            </div>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#musicas">Music</a>
+                <a href="index.html#contato" class="btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="thank-page">
+        <div class="thank-card">
+            <h1 id="greeting">Thank you!</h1>
+            <p id="message">Thanks for reaching out. I received your message and will get back to you as soon as possible.</p>
+
+            <div class="thank-actions">
+                <a href="index.html">Back to home</a>
+                <a class="secondary" href="index.html#musicas">Listen to latest</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © <span id="year"></span> Wilson Johne — Music Production
+    </footer>
+
+    <script>
+        // show submitted name if present in query string
+        (function(){
+            const params = new URLSearchParams(location.search);
+            const name = params.get('name');
+            if (name) {
+                const safe = String(name).trim();
+                if (safe.length) {
+                    document.getElementById('greeting').textContent = `Thank you, ${safe}!`;
+                    document.getElementById('message').textContent = 'We received your message and will reply shortly.';
+                }
+            }
+            document.getElementById('year').textContent = new Date().getFullYear();
+        })();
+    </script>
+</body>
+</html>

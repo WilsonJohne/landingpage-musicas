@@ -3,110 +3,187 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Music Portfolio - Wilson Johne</title>
-    <!-- Retro font + UI font -->
+    <title>Wilson Johne — Ambient Piano & Minimalist Soundscapes</title>
+
+    <meta name="description" content="Wilson Johne — intimate ambient piano and cinematic minimalism. Listen to reflective, emotional compositions ideal for study, games and film. New releases, featured tracks and collaboration info.">
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo/style.css">
-    <!-- Favicons: place files at project root (favicon.ico, favicon-32x32.png, favicon-16x16.png, apple-touch-icon.png) -->
+
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <!-- versioned fallback to bust cache if needed -->
-    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <div class="header-inner container">
-            <div class="brand">
-                <div class="logo h-retro">W</div>
-                <div class="title">
-                    <div class="name">Wilson Johne</div>
-                    <div class="tag">Music & Production</div>
-                </div>
+<header>
+    <div class="header-inner container">
+        <div class="brand">
+            <img src="Chaapeu.png" alt="Wilson Johne logo" class="logo h-retro">
+            <div class="title">
+                <div class="name">Wilson Johne</div>
+                <div class="tag">Ambient Piano & Production</div>
             </div>
-
-            <nav class="nav" aria-label="Main navigation">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#musicas">Music</a>
-                <a href="#contato" class="btn-primary">Contact</a>
-            </nav>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
         </div>
-    </header>
 
-    <main class="container" id="home">
-        <section class="hero">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#musicas">Music</a>
+            <a href="#contato" class="btn-primary">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+</header>
+
+<main class="container" id="home">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-card">
+            <h1 class="h-retro">Wilson Johne</h1>
+            <p>Ambient piano and cinematic minimalism — short pieces that linger. Press play and breathe.</p>
+
+            <div style="margin-top:12px; display:flex; gap:8px;">
+                <a class="btn-primary" href="#musicas">Listen: latest tracks</a>
+                <a href="#about" style="padding:8px 12px; border-radius:10px; background:transparent; text-decoration:none; color:var(--accent-dark); border:1px solid rgba(0,0,0,0.06)">Read the story</a>
+            </div>
+        </div>
+
+        <aside>
             <div class="hero-card">
-                <h1 class="h-retro">Music Portfolio</h1>
-                <p>Welcome to my portfolio. Here you will find my tracks, remixes and sonic projects. Click tracks to open each song in a new tab.</p>
+                <h3 class="h-retro" style="font-size:0.8rem">Featured</h3>
+                <p style="margin-top:8px;color:#444">Newest release — a piano piece written for dusk and small rooms.</p>
 
-                <div style="margin-top:12px; display:flex; gap:8px;">
-                    <a class="btn-primary" href="#musicas">View music</a>
-                    <a href="#contato" style="padding:8px 12px; border-radius:10px; background:transparent; text-decoration:none; color:var(--accent-dark); border:1px solid rgba(0,0,0,0.06)">About</a>
+                <div style="margin-top:12px; position:relative; border-radius:10px; overflow:hidden;">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5vgzy0BCeTEIkWkqdwZt2T?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </div>
+        </aside>
+    </section>
 
-            <aside>
-                <div class="hero-card">
-                    <h3 class="h-retro" style="font-size:0.8rem">Featured</h3>
-                    <p style="margin-top:8px;color:#444">Latest track</p>
-                    <div style="margin-top:12px;">
-                        <!-- Mini player embed (example). Replace src if desired -->
-                        <div style="position:relative; border-radius:10px; overflow:hidden;">
-                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5vgzy0BCeTEIkWkqdwZt2T?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                            
-                        </div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2 class="h-retro">About</h2>
+        <p>
+            Wilson Johne writes small-form, cinematic music that lives between ambient and contemporary classical.  
+            Blending piano, soft electronic textures and a minimalist approach, he builds intimate pieces designed for quiet moments — study, reflection, or late-night thinking.  
+            His compositions aim not to fill space, but to give the listener room to breathe.
+        </p>
+    </section>
+
+    <!-- MUSIC -->
+    <section id="musicas" class="section">
+        <h2 class="h-retro">Music</h2>
+        <p>Selected releases for deep listening. Click a track to open it on Spotify.</p>
+
+        <div id="musicGrid" class="music-grid">
+
+            <!-- CARD TEMPLATE -->
+            <div class="music-card">
+                <div class="player">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6VtfmupbbY5kunNCLHoeNh?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="card-body">
+                    <div class="title">Stagnation</div>
+                    <div class="artist">Wilson Johne</div>
+                    <div class="meta" style="font-size:0.9rem;color:#666;margin-top:6px">
+                        A looping piano idea about waiting for change — recorded in one take.
                     </div>
                 </div>
-            </aside>
-        </section>
-
-        <section id="about" class="section">
-            <h2 class="h-retro">About</h2>
-            <p>I am a producer and composer. This space gathers my productions and releases. The experience is clean, fluid and designed to highlight audio and a retro aesthetic.</p>
-        </section>
-
-        <section id="musicas" class="section">
-            <h2 class="h-retro">Music</h2>
-            <p>Scroll or open in a new tab. Cards are dynamically generated.</p>
-
-            <div id="musicGrid" class="music-grid">
-                <!-- Cards will be inserted by JS -->
             </div>
-        </section>
 
-        <section id="contato" class="section">
-            <h2 class="h-retro">Contact</h2>
-            <div class="contact-grid">
-                <form style="flex:1; min-width:220px;" onsubmit="event.preventDefault(); alert('Replace this form with your backend')">
-                    <input class="input" placeholder="Your name" required />
-                    <input class="input" type="email" placeholder="you@example.com" required style="margin-top:8px"/>
-                    <textarea class="input" rows="4" placeholder="Message" style="margin-top:8px"></textarea>
-                    <div style="margin-top:8px;">
-                        <button class="btn-primary" type="submit">Send</button>
+            <div class="music-card">
+                <div class="player">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2noK49egqwp6hgSBose1lf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="card-body">
+                    <div class="title">Timeless Waltz</div>
+                    <div class="artist">Wilson Johne</div>
+                    <div class="meta" style="font-size:0.9rem;color:#666;margin-top:6px">
+                        A nostalgic waltz built on detuned keys and soft ambience.
                     </div>
-                </form>
-
-                <div style="width:320px; min-width:220px;">
-                    <h4>Links</h4>
-                    <p style="color:#555">Links to your platforms (replace below).</p>
-                    <ul>
-                        <li><a href="#" target="_blank">YouTube</a></li>
-                        <li><a href="#" target="_blank">Spotify</a></li>
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                    </ul>
                 </div>
             </div>
-        </section>
 
-        <footer>
-            © <span id="year"></span> Wilson Johne — Music Production
-        </footer>
-    </main>
+            <div class="music-card">
+                <div class="player">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6MeOuIFQiqXcH3CGWWiaYs?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="card-body">
+                    <div class="title">Missing You</div>
+                    <div class="artist">Wilson Johne</div>
+                    <div class="meta" style="font-size:0.9rem;color:#666;margin-top:6px">
+                        A quiet piano sketch about distance and memory.
+                    </div>
+                </div>
+            </div>
 
-    <script src="js/script.js" defer></script>
+            <div class="music-card">
+                <div class="player">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6j8qr8HZ3gTurOD7nMcmk6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="card-body">
+                    <div class="title">Jingnel</div>
+                    <div class="artist">Wilson Johne</div>
+                    <div class="meta" style="font-size:0.9rem;color:#666;margin-top:6px">
+                        A light, playful christmas theme built around bright piano motifs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="music-card">
+                <div class="player">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7dAVZaYtwfLzLupNZgNTwJ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="card-body">
+                    <div class="title">Golden Waltz</div>
+                    <div class="artist">Wilson Johne</div>
+                    <div class="meta" style="font-size:0.9rem;color:#666;margin-top:6px">
+                        A warm, shimmering waltz inspired by late afternoon light.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contato" class="section">
+        <h2 class="h-retro">Contact</h2>
+
+        <div class="contact-grid">
+
+            <form style="flex:1; min-width:220px;" action="obrigado.html" method="GET">
+                <input class="input" name="name" placeholder="Your name" required />
+                <input class="input" name="email" type="email" placeholder="you@example.com" required style="margin-top:8px"/>
+                <textarea class="input" name="message" rows="4" placeholder="Message" style="margin-top:8px"></textarea>
+                <div style="margin-top:8px;">
+                    <button class="btn-primary" type="submit">Send</button>
+                </div>
+            </form>
+
+            <div style="width:320px; min-width:220px;">
+                <h4>Links</h4>
+                <p style="color:#555">Find more of my work here:</p>
+                <ul>
+                    <li><a href="#" target="_blank">YouTube</a></li>
+                    <li><a href="#" target="_blank">Spotify</a></li>
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        © <span id="year"></span> Wilson Johne — Ambient Piano & Production
+    </footer>
+</main>
+
+<script src="js/script.js" defer></script>
 </body>
 </html>

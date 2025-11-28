@@ -182,10 +182,10 @@ header {
     background-position: center;
 }
 .card-body {
-    padding: 12px;
+    padding: 8px;  /* reduced from 12px */
     display:flex;
     flex-direction:column;
-    gap:8px;
+    gap: 4px;      /* reduced from 8px */
     flex:1;
 }
 .card-body .meta {
@@ -208,12 +208,17 @@ header {
 .player {
     position: relative;
     width: 100%;
-    background: #000;
+    height: 190px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 .player iframe {
     width: 100%;
-    height: 190px;
-    display:block;
+    height: 100%;
+    display: block;
     border: none;
 }
 .iframe-link {
@@ -243,6 +248,57 @@ footer {
     text-align:center;
     color:#666;
     font-size:0.9rem;
+}
+
+/* Thank you page */
+.thank-page {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, rgba(198,40,40,0.02), rgba(255,255,255,0.02));
+}
+.thank-card {
+    max-width: 780px;
+    width: 100%;
+    background: linear-gradient(180deg,var(--paper),#fff);
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+.thank-card h1 {
+    font-family: 'Press Start 2P', monospace;
+    color: var(--accent-dark);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+.thank-card p {
+    color: #444;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+.thank-actions {
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.thank-actions a {
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:10px;
+    color:#fff;
+    background:var(--accent);
+    box-shadow: var(--card-shadow);
+    font-weight:600;
+}
+.thank-actions a.secondary {
+    background:transparent;
+    color:var(--accent-dark);
+    border:1px solid rgba(0,0,0,0.06);
+    box-shadow:none;
 }
 
 /* Responsive */
