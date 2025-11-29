@@ -43,4 +43,37 @@
     // Footer year
     const y = new Date().getFullYear();
     document.getElementById('year').textContent = y;
+
+    // --- New: Netlify-friendly AJAX submit + redirect with name in query ---
+    const contactForm = document.querySelector('form[name="contact"]');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.currentTarget;
+            const data = new FormData(form);
+
+            // Build x-www-form-urlencoded body for Netlify
+            const body = new URLSearchParams();
+            for (const pair of data.entries()) {
+                body.append(pair[0], pair[1]);
+            }
+
+            try {
+                // POST to Netlify (root) so Netlify records the form
+                await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: body.toString()
+                });
+
+                // Redirect to thank you page, including name in query string
+                const name = data.get('name') || '';
+                const redirect = 'obrigado.html' + (name ? '?name=' + encodeURIComponent(name) : '');
+                window.location.href = redirect;
+            } catch (err) {
+                console.error('Form submit failed', err);
+                alert('There was an error sending your message. Please try again.');
+            }
+        });
+    }
 })();
